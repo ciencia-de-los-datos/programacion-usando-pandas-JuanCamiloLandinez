@@ -104,7 +104,9 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
-    return
+    listac4 = sorted([i.upper() for i in list(tbl1["_c4"].unique())])
+    
+    return listac4
 
 
 def pregunta_07():
@@ -120,7 +122,9 @@ def pregunta_07():
     E    67
     Name: _c2, dtype: int64
     """
-    return
+    sumac2  = tbl0.groupby('_c1')['_c2'].sum()
+
+    return sumac2
 
 
 def pregunta_08():
