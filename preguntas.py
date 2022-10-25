@@ -22,9 +22,9 @@ def pregunta_01():
     40
 
     """
-    n_row = len(tbl0)
+    n_rows = len(tbl0)
 
-    return n_row
+    return n_rows
 
 
 def pregunta_02():
@@ -35,9 +35,9 @@ def pregunta_02():
     4
 
     """
-    n_col = len(tbl0.columns)
+    n_colm = len(tbl0.columns)
 
-    return n_col
+    return n_colm
 
 
 def pregunta_03():
@@ -54,9 +54,9 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
-    conteo = tbl0.groupby('_c1')['_c1'].count()
+    conteos = tbl0.groupby('_c1')['_c1'].count()
     
-    return conteo
+    return conteos
 
 
 def pregunta_04():
@@ -71,7 +71,9 @@ def pregunta_04():
     E    4.785714
     Name: _c2, dtype: float64
     """
-    return
+    promed  = tbl0.groupby('_c1')['_c2'].mean()
+
+    return promed
 
 
 def pregunta_05():
@@ -88,7 +90,9 @@ def pregunta_05():
     E    9
     Name: _c2, dtype: int64
     """
-    return
+    maxim =  tbl0.groupby('_c1')['_c2'].max()
+
+    return maxim
 
 
 def pregunta_06():
