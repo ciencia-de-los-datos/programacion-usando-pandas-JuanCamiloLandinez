@@ -222,6 +222,8 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
+     tbl2['_c5'] = tbl2['_c5a'] + ':' + tbl2['_c5b'].astype(str)
+
     table3 = tbl2.groupby(['_c0']).agg({'_c5': lambda letter: ",".join(sorted(list(letter)))}).reset_index()
 
     return table3
