@@ -22,7 +22,9 @@ def pregunta_01():
     40
 
     """
-    return
+    n_row = len(tbl0)
+
+    return n_row
 
 
 def pregunta_02():
@@ -33,7 +35,9 @@ def pregunta_02():
     4
 
     """
-    return
+    n_col = len(tbl0.columns)
+
+    return n_col
 
 
 def pregunta_03():
@@ -50,7 +54,9 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
-    return
+    conteo = tbl0.groupby('_c1')['_c1'].count()
+    
+    return conteo
 
 
 def pregunta_04():
