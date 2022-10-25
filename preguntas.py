@@ -181,7 +181,9 @@ def pregunta_10():
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
-    return
+    table1 = tbl0.groupby(['_c1']).agg({'_c2': lambda num: ":".join(map(str,sorted(list(num))))})
+
+    return table1
 
 
 def pregunta_11():
@@ -200,7 +202,9 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    return
+    table2 = tbl1.groupby(['_c0']).agg({'_c4': lambda letter: ",".join(sorted(list(letter)))}).reset_index()
+
+    return table2
 
 
 def pregunta_12():
@@ -218,7 +222,9 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
-    return
+    table3 = tbl2.groupby(['_c0']).agg({'_c5': lambda letter: ",".join(sorted(list(letter)))}).reset_index()
+
+    return table3
 
 
 def pregunta_13():
@@ -235,4 +241,8 @@ def pregunta_13():
     E    275
     Name: _c5b, dtype: int64
     """
-    return
+    table4 = pd.merge(tbl0, tbl2, on='_c0')
+
+    sumat4 = table4.groupby('_c1')['_c5b'].sum()
+    
+    return sumat4
